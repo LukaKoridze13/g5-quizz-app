@@ -1,12 +1,45 @@
-import React from "react"; // Ensure this line is included
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-function App() {
+const ThemeToggle = () => {
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div className="toggle-container">
+        <h1 className="icon">☀</h1>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode((prev) => !prev)}
+          />
+          <span className="slider"></span>
+        </label>
+        <h1 className="icon">☽</h1>
+      </div>
+      <div className="maincontainer">
+        <h2
+          style={{
+            width: "400px",
+          }}
+        >
+          <h1 style={{ fontSize: "50px" }}>
+            Welcome to the{" "}
+            <span style={{ fontWeight: "bold" }}>Frontend Quiz!</span>
+          </h1>
+          <p style={{}}>Pick a subject to get started.</p>
+        </h2>
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+export default ThemeToggle;
