@@ -1,12 +1,25 @@
-import React from "react"; // Ensure this line is included
+
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-function App() {
+const ThemeToggle = () => {
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="toggle-container">
+      <h1 className="icon">☀</h1>
+      <label className="switch">
+        <input type="checkbox" checked={darkMode} onChange={() => setDarkMode((prev) => !prev)} />
+        <span className="slider"></span>
+      </label>
+      <h1 className="icon">☽</h1>
     </div>
   );
-}
+};
 
-export default App;
+export default ThemeToggle;
