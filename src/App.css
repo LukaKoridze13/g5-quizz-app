@@ -1,64 +1,78 @@
 :root {
-    --bg: #fff;
-    --text: #000;
-  }
-  
-  .dark {
-    --bg: #121212;
-    --text: #fff;
-  }
-  
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .toggle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between elements */
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .icon {
-    font-size: 24px;
-  }
-  
-  .switch {
-    position: relative;
-    width: 50px;
-    height: 25px;
-  }
-  
-  .slider {
+  --bg: rgba(244, 246, 250, 1);
+  --text: rgba(49, 62, 81, 1);
+}
+p{
+  color: rgba(171, 193, 225, 1);
+  font-size: 16px;
+  font-style: italic;
+
+  margin-top: 30px;
+}
+.dark {
+  --bg: rgba(49, 62, 81, 1);
+  --text: rgba(255, 255, 255, 1);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.switch {
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3.5px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.maincontainer {
+ 
+  top: 224px;
+  left: 140px;
+  justify-content: space-between;
     position: absolute;
-    inset: 0;
-    background: #ccc;
-    border-radius: 25px;
-    transition: 0.4s;
-  }
-  
-  .slider:before {
-    content: "";
-    position: absolute;
-    height: 18px;
-    width: 18px;
-    left: 4px;
-    bottom: 3.5px;
-    background: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-  
-  input:checked + .slider {
-    background: #007bff;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(24px);
-  }
-  
+
+}
