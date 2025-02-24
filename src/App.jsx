@@ -1,11 +1,16 @@
-import React from "react"; // Ensure this line is included
+import React from "react";
 import "./App.css";
+import Options from "./components/Options";
+
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <div className="bg-[#F4F6FA] fixed inset-0">
+    
+    <Options/>
+  </div>
+  
+
   );
 }
 
