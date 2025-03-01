@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Options from "./components/Options";
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(
@@ -25,21 +26,26 @@ const ThemeToggle = () => {
         </label>
         <h1 className="icon">☽</h1>
       </div>
-      <div className="maincontainer">
-        <h2
-          style={{
-            width: "400px",
-          }}
-        >
-          <h1 style={{ fontSize: "50px" }}>
-            Welcome to the{" "}
-            <span style={{ fontWeight: "bold" }}>Frontend Quiz!</span>
-          </h1>
-          <p style={{}}>Pick a subject to get started.</p>
-        </h2>
-      </div>
     </div>
   );
 };
 
-export default ThemeToggle;
+function App() {
+  return (
+    <>
+      <ThemeToggle />
+      <Options />
+      <div className="maincontainer">
+        <div style={{ width: "400px" }}>
+          <h1 style={{ fontSize: "50px" }}>
+            Welcome to the{" "}
+            <span style={{ fontWeight: "bold" }}>Frontend Quiz!</span>
+          </h1>
+          <p>Pick a subject to get started.</p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default App;
