@@ -26,6 +26,7 @@ const ThemeToggle = () => {
         </label>
         <h1 className="icon">☽</h1>
       </div>
+      <p>aigdufu</p>
     </div>
   );
 };
