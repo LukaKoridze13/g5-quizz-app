@@ -25,9 +25,7 @@ const ThemeToggle = () => {
           <span className="slider"></span>
         </label>
         <h1 className="icon">☽</h1>
-        <h3>yqwuatfu</h3>
       </div>
-      <p>aigdufu</p>
     </div>
   );
 };
